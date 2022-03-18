@@ -1,0 +1,26 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'com.example'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+compileGroovy {
+    groovyOptions.javaAnnotationProcessing = true
+}
+
+dependencies {
+    implementation 'com.google.dagger:dagger:2.41'
+    implementation 'com.google.code.gson:gson:2.7'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.41'
+    testImplementation 'junit:junit:4.13.2'
+}
+task wrapper(type: Wrapper){
+    gradleVersion = '7.4.1'
+}
+
